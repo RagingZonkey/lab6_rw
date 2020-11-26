@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using Newtonsoft.Json;
 
 
 namespace lab6_rw
@@ -269,7 +270,13 @@ namespace lab6_rw
                     break;
             }
 
+            Controller.ReadCollectionFromFile();
 
+            //var JS = new JsonTester(27, "Yellow Submarine Ltd.");
+            //var json = JsonConvert.SerializeObject(JS, Formatting.Indented);
+            //Console.WriteLine(json);
+            //var NewInfo = JsonConvert.DeserializeObject<JsonTester>(json);
+            //Console.WriteLine(NewInfo.Str + NewInfo.Number);
 
 
         }

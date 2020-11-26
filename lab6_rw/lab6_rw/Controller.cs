@@ -1,6 +1,7 @@
 ﻿using System;
 using lab6_2;
 using lab6_rw;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,43 +50,23 @@ namespace lab6_3
             Console.WriteLine($"Стоимость всех печатных изданий в библиотеке: {pepricesum} ");
         }
 
+        public static void ReadCollectionFromFile()
+        {
+            string path = @"C:\Users\yegor\source\repos\lab6_rw\lab6_rw\lab6_rw\TextFile.txt";
+            string temp;
+            List<string> CollectionOfStrings = new List<string>();
+            StreamReader sr = new StreamReader(path);
+            do
+            {
+                temp = sr.ReadLine();
+                CollectionOfStrings.Add(temp);
+            }
+            while (temp != null);
+            foreach (string str in CollectionOfStrings)
+            {
+                Console.WriteLine(str);
+            }
+        }
 
-
-
-
-        //}
-
-        //partial class Controller : IComparer<Fighter>
-        //{
-        //    public int Compare(Fighter p1, Fighter p2)
-        //    {
-        //        if (p1.Name.Length > p2.Name.Length)
-        //            return 1;
-        //        else if (p1.Name.Length < p2.Name.Length)
-        //            return -1;
-        //        else
-        //            return 0;
-        //    }
-
-
-        //    public static List<Fighter> SortByPower(List<Fighter> fighters)
-        //    {
-        //        Fighter temp;
-        //        for (int i = 0; i < fighters.Count; i++)
-        //        {
-        //            for (int j = i + 1; j < fighters.Count; j++)
-        //            {
-        //                if (fighters[i].AttackPower > fighters[j].AttackPower)
-        //                {
-        //                    temp = fighters[i];
-        //                    fighters[i] = fighters[j];
-        //                    fighters[j] = temp;
-        //                }
-        //            }
-        //        }
-
-
-        //        return fighters;
-        //    }
     }
 }
